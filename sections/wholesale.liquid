@@ -36,11 +36,11 @@
 
           <div class="grid grid--half-gutters">
             <div class="grid__item medium-up--one-half">
-              <label for="{{ formId }}-business-name">Business Name</label>
+              <label for="{{ formId }}-business-name">{{'customizations.wholesale.business_name' | t}}</label>
               <input type="text" id="{{ formId }}-business-name" name="contact[Business Name]">
             </div>
             <div class="grid__item medium-up--one-half">
-              <label for="{{ formId }}-website">Website</label>
+              <label for="{{ formId }}-website">{{'customizations.wholesale.business_website' | t}}</label>
               <input
                 type="url"
                 id="{{ formId }}-website"
@@ -67,7 +67,7 @@
           
           {% unless section.settings.businessTypeOptions == blank %}
           
-          <label for="{{ formId }}-business-type">Business Type</label>
+          <label for="{{ formId }}-business-type">{{'customizations.wholesale.business_type' | t}}</label>
           <select id="{{ formId }}-business-type" name="contact[Business Type]">
               
               {% assign options = section.settings.businessTypeOptions | split: ','  %}
