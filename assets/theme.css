@@ -9727,21 +9727,21 @@ hr {
 
 /* style the label */
 .faq .question-label {
-  //background-color: #0c007a;
+  background-color: #0c007a;
   display: flex;
   justify-content: space-between;
   padding: 1em;
   font-weight: bold;
-  //color:white;
+  color:white;
   color: #0c007a;
 }
 
 .faq .question-label:hover {
-  //background-color: #1900fa;
+  background-color: #1900fa;
 }
 
 .faq .question-toggle:checked~.question-label {
-  //background-color: #1900fa;
+  background-color: #1900fa;
 }
 
 .faq .question-label::after {
