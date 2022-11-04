@@ -294,9 +294,9 @@
               <div class="container">
         <div class="selector">
             <div class="tab tab-active">
-                {{ 'products.product.description' | t }}
+               {{ 'products.product.description' | t }}
             </div>
-             {% if product.metafields.description.details %}
+             {% if product.metafields.description.details-us %}
             <div class="tab">
                 {{ 'products.product.details' | t }}
             </div>
@@ -309,9 +309,10 @@
             <div id="Description" class="content-body show-active">
                 {{ product.description }}
             </div>
-            {% if product.metafields.description.details %}
+            {% if product.metafields.description.details-us %}
             <div id="Details" class="content-body">
-              {{ product.metafields.description.details }}
+              <div id='detailsUs'>{{ product.metafields.description.details-us }}</div>
+              <div id='detailsEu'>{{ product.metafields.description.details-eu }}</div>
             </div>
             {% endif %}
             <div id="Shipping" class="content-body">

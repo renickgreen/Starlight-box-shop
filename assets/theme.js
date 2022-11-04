@@ -761,7 +761,14 @@ slate.Variants = (function() {
       if (!variant) {
         return;
       }
-
+      console.log('This is ME!' + variant.option2);
+      if(variant.option2 === 'US'){
+        document.getElementById('detailsUs').style.display = "block";
+        document.getElementById('detailsEu').style.display = "none";
+      }else{
+        document.getElementById('detailsUs').style.display = "none";
+        document.getElementById('detailsEu').style.display = "block";
+      }
       this._updateMasterSelect(variant);
       this._updateImages(variant);
       this._updatePrice(variant);
