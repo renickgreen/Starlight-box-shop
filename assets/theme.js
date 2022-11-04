@@ -762,17 +762,18 @@ slate.Variants = (function() {
         return;
       }
       console.log('This is ME!' + variant.option2);
-      if(variant.option2 === 'US'){
+     /* if(variant.option2 === 'US'){
         document.getElementById('detailsUs').style.display = "block";
         document.getElementById('detailsEu').style.display = "none";
       }else{
         document.getElementById('detailsUs').style.display = "none";
         document.getElementById('detailsEu').style.display = "block";
-      }
+      }*/
       this._updateMasterSelect(variant);
       this._updateImages(variant);
       this._updatePrice(variant);
       this._updateSKU(variant);
+      this._updateDetails(variant);
       this.currentVariant = variant;
 
       if (this.enableHistoryState) {
@@ -887,6 +888,28 @@ slate.Variants = (function() {
 
       if (!masterSelect) return;
       masterSelect.value = variant.id;
+    },
+    /**
+     * Update details of variant change
+     *
+     * @param  {variant} variant - Currently selected variant
+     */
+    _updateDetails: function(variant){
+      const div = document.getElementById('details');
+      let details = document.getElementById('detailsMeta').innerHTML;
+      const index = details.indexOf(`${variant.option2}`);
+      details = details.slice(index+3);
+      console.log(details);
+      details = details.split('|');
+      console.log('index is: '+index);
+      let table = `<table>
+                    <tr><td>${details[0]}</td><td>${details[1]}</td></tr>
+                    <tr><td>${details[2]}</td><td>${details[3]}</td></tr>
+                    <tr><td>${details[4]}</td><td>${details[5]}</td></tr>
+                    <tr><td>${details[6]}</td><td>${details[7]}</td></tr>
+                   </table>`;
+    div.innerHTML = table;
+      console.log('hello from updateDetails' + details);
     }
   });
 
